@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tour extends CI_Controller {
+class Transaction extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,22 +20,15 @@ class Tour extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('mymodel');
-		$data['result'] = $this->mymodel->GetArtikel();
-		$this->load->view('home',$data);
+		$this->load->model('transacmodel');
+		$data['result'] = $this->transacmodel->GetArtikel();
+		$this->load->view('transaksi',$data);
 	}
 	public function do_preview($id=''){
-		$this->load->model('mymodel');
-		$data['isi'] = $this->mymodel->GetPreview($id);
+		$this->load->model('transac_model');
+		$data['isi'] = $this->transacmodel->GetPreview($id);
 		$this->load->view('preview', $data);
 	}
-	public function about(){
-		$this->load->view('about');
-	}
-	public function booking(){
-		$this->load->view('booking');
-	}
-	public function news(){
-		$this->load->view('news');
-	}
+	
+	
 }

@@ -35,16 +35,16 @@
 				<!-- container -->
 				<div class="container">
 					<div class="head-logo">
-						<a href="index.html"><img src="images/logo1.png" alt="" /></a>
+						<a href="index.html"><img src="<?php echo base_url('./assets/images/logo1.png');?>" alt="" /></a>
 					</div>
 					<div class="top-nav">
-						<span class="menu"><img src="images/menu.png" alt=""></span>
+						<span class="menu"><img src="<?php echo base_url('./assets/images/menu.png');?>" alt=""></span>
 							<ul class="cl-effect-1">
-								<li><a href="index.html">HOME</a></li>                                             
-								<li><a href="about.html">ABOUT</a></li>
-								<li><a href="booking.html">BOOKING</a></li> 
-								<li><a href="news.html">NEWS</a></li> 
-								<li><a href="mail.html">MAIL US</a></li>  
+								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
+								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
+								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
+								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li>  
+								<li><a href="<?php echo base_url('./transaction'); ?>">TRANSACTION</a></li>  
 							</ul>
 							<!-- script-for-menu -->
 							 <script>
@@ -122,36 +122,18 @@
 				</div>
 				<div class="top-grids">
 					<div class="top-grid">
-						<img src="images/6.jpg" alt="" />
+					<?php foreach($result as $d){ ?>
+						<img src="<?php echo base_url('assets/images/'.$d['gambar']); ?>">
 						<div class="top-grid-info">
-							<h3>Vestibulum auctor</h3>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<img src="images/3.jpg" alt="" />
-						<div class="top-grid-info">
-							<h3>Vestibulum auctor</h3>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<img src="images/2.jpg" alt="" />
-						<div class="top-grid-info">
-							<h3>Vestibulum auctor</h3>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-						</div>
-					</div>
-					<div class="top-grid">
-						<img src="images/4.jpg" alt="" />
-						<div class="top-grid-info">
-							<h3>Vestibulum auctor</h3>
-							<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
+							<h3><?php echo $d['nama']; ?></h3>
+							<div class="read-more red">
+								<a  href="<?php echo base_url()."tour/do_preview/".$d['id']; ?>">Read More</a>
+							</div>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-			</div>
+			</div><?php } ?> 
 			<!-- //container -->
 		</div>
 		<!-- //banner-grids -->

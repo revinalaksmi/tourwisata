@@ -115,6 +115,19 @@ ul a:focus {
 	margin: 1em 0 0 0;
 	letter-spacing: 2px;
 }
+.head-prev{
+	text-align: center;
+	left: 30%;
+	top: 42%;
+	margin: 17em 0 0 0;
+}
+.head-prev h1{
+	font-size: 40px;
+	color: #E74C3C;
+	font-family: 'Playball', cursive;
+	margin: 0;
+	letter-spacing: 3px;
+}
 /*------------------ Slider Part starts Here----------*/
 #slider2,
 #slider3 {
@@ -851,6 +864,20 @@ select option{
 	color: #FFF;
 	font-size: 16px;
 	margin: .5em 0 0 0;
+}
+.how-grids1 {
+	margin-top: 3em;
+}
+.how-grids1 span{
+	padding: .5em .8em;
+	background: black;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	color: #A1A0A0;
+	font-size: 20px;
 }
 .how-grids {
 	margin-top: 3em;
