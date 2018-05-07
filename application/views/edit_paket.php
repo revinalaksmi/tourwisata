@@ -39,10 +39,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- container -->
 			<div class="container">
 				<div class="head-logo">
-					<a href="index.html"><img src="images/logo1.png" alt="" /></a>
+					<a href="index.html"><img src="<?php echo base_url('./assets/images/logo1.png'); ?>" alt="" /></a>
 				</div>
 				<div class="top-nav">
-						<span class="menu"><img src="images/menu.png" alt=""></span>
+						<span class="menu"><img src=<?php echo base_url('./assets/images/menu.png'); ?>" alt=""></span>
 							<ul class="cl-effect-1">
 								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
 								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
@@ -92,127 +92,76 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							});
 						})();
 					</script>
+					<div class="online_reservation">
+					<?php    
+                        $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
+                         ?>
+					 <?php echo validation_errors(); ?>
+					 <?php echo form_open_multipart('./tour/do_update/', 'id="id"'); ?>
+					  <form>
+							<div class="b_room">
+								<div class="booking_room">
+									<div class="reservation">
+										<ul>		
+										<input type="hidden" name="id" value="<?php echo $id ?>" required="Field Nama harus diisi">
+											<li  class="span1_of_1 left">
+												 <h5>Nama</h5>
+												 <div class="book_date">
+														<input type="text" name="nama" value="<?php echo $nama ?>" required="Field Nama harus diisi">
+												 </div>					
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Tempat</h5>
+												 <div class="book_date">
+													<input type="text" name="tempat" value="<?php echo $tempat ?>" required="">
+												 </div>		
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Harga Penumpang Dewasa</h5>
+												 <div class="book_date">
+													 <input type="text" name="hrg_dewasa" value="<?php echo $hrg_dewasa ?>" required=>
+												 </div>					
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Harga Penumpang Anak-Anak</h5>
+												 <div class="book_date">
+													<input type="text" name="hrg_anak" value="<?php echo $hrg_anak ?>" required=>
+												 </div>		
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Fasilitas</h5>
+												 <div class="book_date">
+													<input type="text" name="fasilitas" value="<?php echo $fasilitas ?>" required=>
+												 </div>		
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Syarat</h5>
+												 <div class="book_date">
+													<input type="text" name="syarat" value="<?php echo $syarat ?>" required=>
+												 </div>		
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Gambar</h5>
+												 <div class="book_date">
+													<input type="file" name="userfile" size="20">
+												 </div>		
+											 </li>
+											 
+											 <li class="span1_of_3">
+													<div class="date_btn">
+															<input type="submit" name="btnSubmit" value="Simpan" />
+													</div>
+											 </li>
+											 <div class="clearfix"></div>
+										</ul>
+									 </div>
+							</form>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+					</div>
 					
-					
-				</div>
-				<div class="clearfix"></div>
-				<div class="booking-grids">
-					<h3>WE ARE PROVIDE</h3>
-					<div class="col-md-7 booking-grid-left">
-					<?php foreach ($isi as $data) { ?>
-						<div class="head-prev">
-							<h1> <?php echo $data['nama']; ?></h1>
-						</div> 
-						<h4><b>Tempat yang akan dikunjungi</b></h4>
-							<p><?php echo $data['tempat']; ?></p>
-						<p><h4><b>Fasilitas</b></h4></p>
-							<p><?php echo $data['fasilitas']; ?></p>
-						<div class="col-md-4">
-							<p><h4><b>Harga dewasa</b></h4></p>
-							<p><font color="blue"><?php echo $data['hrg_dewasa']; ?></font></p>
-						</div>
-						<div class="col-md-4">
-							<p><h4><b>Harga anak-anak</b></h4></p>
-							<p><font color="blue"><?php echo $data['hrg_anak']; ?></font></p>
-						</div>
-					</div>
-					<div class="col-md-5 booking-grid-right">
-						<img src="<?php echo base_url('assets/images/'.$data['gambar']); ?>">
-					</div>
-					<div class="col-md-7 booking-grid-left">
-						<p><h4><b>Syarat dan Ketentuan</b></h4></p>
-							<p><?php echo $data['syarat']; ?></p>
-						<div class="read-more red">
-							<a href="#">Booking Now</a> 
-							<a href="<?php echo base_url()."tour/edit_data/".$data['id']; ?>">Update</a>
-						</div>
-					</div>
-					 <?php } ?>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-				
-
-
-			<!-- //container 
-			<div class="how-to">
-				<!-- container -->
-				<div class="container">
-					<div class="how-to-info">
-						<h3>HOW TO BOOK</h3>
-						<h4>Quisque lectus ipsum, fermentum eu sodales non, auctor in mauris. Nulla pretium cursus nulla, ac rutrum magna laoreet eu.
-							Phasellus vel est vel odio finibus lacinia. Donec a diam dictum, elementum ipsum et, pulvina
-						</h4>
-						<p>Duis vulputate auctor libero, eget viverra ante dapibus sit amet. Vestibulum auctor pellentesque enim, 
-						sed ornare metus vehicula eu. Etiam rhoncus eu urna ac feugiat. Praesent sed tempor urna, laoreet dignissim est. 
-						Aenean nec justo vitae arcu consequat lobortis. Sed iaculis et dui eu sollicitudin. Morbi id felis porttitor tellus 
-						viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam cursus 
-						leo nec enim vulputate finibus. Nulla at dui non nisi molestie posuere non sed ante. 
-						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Nulla at dui non nisi molestie posuere non sed ante. </p>
-					</div>
-					<div class="how-grids">
-						<div class="col-md-4 how-grid">
-							<span>1</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
-						<div class="col-md-4 how-grid">
-							<span>2</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
-						<div class="col-md-4 how-grid">
-							<span>3</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- //container -->
-			</div>
-			<div class="visiting">
-				<!-- container -->
-				<div class="container">
-					<div class="visiting-info">
-						<h3>VISITING PLACES</h3>
-					</div>
-					<div class="top-grids">
-						<div class="top-grid">
-							<img src="images/6.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="top-grid">
-							<img src="images/3.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="top-grid">
-							<img src="images/2.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="top-grid">
-							<img src="images/4.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- //container -->
-			</div>
-		</div>
-		<!-- booking -->
+			
 		<!-- footer -->
 		<div class="footer">
 			<!-- container -->

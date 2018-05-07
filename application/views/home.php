@@ -16,8 +16,9 @@
 		<!-- js -->
 		<script src="assets/js/modernizr.custom.js"></script>
 		<!-- start-smoth-scrolling -->
-		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="<?php echo base_url('./assets/js/move-top.js');?>"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
+
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -120,20 +121,23 @@
 					<h3>TOP DESTINATIONS</h3>
 					<p>Pellentesque tempor sem in scelerisque mollis.</p>
 				</div>
+				<div class="read-more red">
+					<a href="<?php echo base_url('./tour/add_data/'); ?>">New Destination</a>
+				</div>
 				<div class="top-grids">
+				<?php foreach($result as $d){ ?>
 					<div class="top-grid">
-					<?php foreach($result as $d){ ?>
 						<img src="<?php echo base_url('assets/images/'.$d['gambar']); ?>">
 						<div class="top-grid-info">
 							<h3><?php echo $d['nama']; ?></h3>
 							<div class="read-more red">
 								<a  href="<?php echo base_url()."tour/do_preview/".$d['id']; ?>">Read More</a>
-							</div>
+							</div> 
 						</div>
-					</div>
+					</div> <?php } ?> 
 					<div class="clearfix"> </div>
 				</div>
-			</div><?php } ?> 
+			</div>
 			<!-- //container -->
 		</div>
 		<!-- //banner-grids -->

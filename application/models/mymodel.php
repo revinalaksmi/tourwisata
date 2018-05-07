@@ -12,10 +12,17 @@ class Mymodel extends CI_Model {
 		return $data->result_array();
 	}
 	public function GetPreview($id=''){
-		$isi = $this->db->query('SELECT nama,tempat,hrg_dewasa,hrg_anak,fasilitas,syarat,gambar FROM paket where id = '.$id);
+		$isi = $this->db->query('SELECT id,nama,tempat,hrg_dewasa,hrg_anak,fasilitas,syarat,gambar FROM paket where id = '.$id);
 		return $isi->result_array();
 	}
-	
+	public function InsertData($tabelNama,$data){
+		$res = $this->db->insert($tabelNama,$data);
+		return $res;
+	}
+	public function UpdateData($tabelNama,$data,$where){
+		$res = $this->db->update($tabelNama,$data,$where);
+		return $res;
+	}
 
 	
 
