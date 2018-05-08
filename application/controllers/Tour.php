@@ -43,6 +43,8 @@ class Tour extends CI_Controller {
 	    $this->form_validation->set_rules('fasilitas', 'Fasilitas', 'required');
 	    $this->form_validation->set_rules('syarat', 'Syarat', 'required');
 	    // Cek apakah input valid atau tidak
+
+	   
 	    if ($this->form_validation->run() === FALSE)
 	    {
 	        $this->load->view('add_paket');
@@ -59,17 +61,18 @@ class Tour extends CI_Controller {
         if ( ! $this->upload->do_upload('userfile'))
         {
                 $data['upload_error'] = $this->upload->display_errors();
+                print_r($data['upload_error']);
         }
         else
         {
             $data = array('upload_data' => $this->upload->data());
 
-            $nama			= $_POST['nama'];
-			$tempat 		= $_POST['tempat'];
-			$hrg_dewasa 	= $_POST['hrg_dewasa'];
-			$hrg_anak		= $_POST['hrg_anak'];
-			$fasilitas		= $_POST['fasilitas'];
-			$syarat 		= $_POST['syarat'];
+            $nama			= $this->input->post('nama');
+			$tempat 		= $this->input->post('tempat');
+			$hrg_dewasa 	= $this->input->post('hrg_dewasa');
+			$hrg_anak		= $this->input->post('hrg_anak');
+			$fasilitas		= $this->input->post('fasilitas');
+			$syarat 		= $this->input->post('syarat');
 			$gambar		= $this->upload->data('file_name');
 			
 			$data_insert	= array(
@@ -81,7 +84,7 @@ class Tour extends CI_Controller {
 									'syarat' 		=> $syarat,
 									'gambar'		=> $gambar
 								);
-
+			print_r($data_insert);
 			$this->load->model('mymodel');
 			$res = $this->mymodel->InsertData('paket', $data_insert);
 			
@@ -158,4 +161,11 @@ class Tour extends CI_Controller {
 	public function news(){
 		$this->load->view('news');
 	}
+	public function hapus($id){
+		$this->load->model('mymodel');
+		$where = array('id' => $id);
+		$this->mymodel->hapus_data($where,'paket');
+		redirect('tour');
+	}
+
 }
