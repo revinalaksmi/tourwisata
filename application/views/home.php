@@ -132,7 +132,8 @@
 							<h3><?php echo $d['nama']; ?></h3>
 							<div class="read-more red">
 								<a  href="<?php echo base_url()."tour/do_preview/".$d['id']; ?>">Read More</a>
-							</div> 
+								<a href="<?php echo base_url()."tour/hapus/".$d['id']; ?>">Delete</a>
+							</div>
 						</div>
 					</div> <?php } ?> 
 					<div class="clearfix"> </div>

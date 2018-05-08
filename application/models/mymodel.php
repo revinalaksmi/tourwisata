@@ -23,6 +23,10 @@ class Mymodel extends CI_Model {
 		$res = $this->db->update($tabelNama,$data,$where);
 		return $res;
 	}
+	function hapus_data($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
+		}	
 
 	
 
