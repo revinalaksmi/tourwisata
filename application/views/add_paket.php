@@ -68,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- container -->
 			<div class="container">
 				<div class="booking-info">
-					<h3>booking</h3>
+					<h3>DESTINATION</h3>
 				</div>
 				<div class="booking-form">
 					<!---strat-date-piker---->
