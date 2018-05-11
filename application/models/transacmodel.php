@@ -9,20 +9,20 @@ class Transacmodel extends CI_Model {
         $this->db->join('member', 'transaksi.id_member =member.username');
 
         $data = $this->db->get('transaksi');
-       
-	
+
 		return $data->result_array();
 	}
-	public function GetPreview($id=''){
-		$isi = $this->db->query('SELECT nama,tempat,hrg_dewasa,hrg_anak,fasilitas,syarat,gambar FROM paket where id = '.$id);
-		return $isi->result_array();
-	}
-	
-function json(){
-        $this->datatables->select('id,id_paket,id_member,tanggalbrgkt,jml_dewasa,jml_anak,pembayaran');
-        $this->datatables->from('transaksi');
-        return print_r($this->datatables->generate());
-    }
-	
 
+	public function create_transaksi()
+    {
+        $data = array(
+            'id_paket'        	=> $this->input->post('id_paket'),
+            'id_member'  		=> $this->input->post('id_member'),
+            'tanggalbrgkt'        => $this->input->post('tanggalbrgkt'),
+            'jml_dewasa'        => $this->input->post('jml_dewasa'),
+            'jml_anak'        => $this->input->post('jml_anak'),
+            'pembayaran'        => $this->input->post('pembayaran')
+        );
+        return $this->db->insert('transaksi', $data);
+    }
 }

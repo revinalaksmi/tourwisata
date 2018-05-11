@@ -69,7 +69,12 @@
 
 
 			<div class="container">
-            <h3>TRANSACTION</h3>
+            <h3>TRANSACTION</h3><br>
+
+            <div class="read-more red">
+					<a href="<?php echo base_url('./transaction/do_insert/'); ?>">New Transaction</a>
+			</div><br><br>
+
             <table id="myTable" class="display" cellspacing="0" width="100%">
                 <thead>
                     <tr>

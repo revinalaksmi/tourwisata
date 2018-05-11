@@ -93,59 +93,60 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						})();
 					</script>
 					<div class="online_reservation">
+					<?php    
+                        $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
+                         ?>
+					 <?php echo validation_errors(); ?>
+					 <?php echo form_open_multipart('./transaction/do_insert/'); ?>
+						<form>
 							<div class="b_room">
 								<div class="booking_room">
 									<div class="reservation">
 										<ul>		
 											<li  class="span1_of_1 left">
-												 <h5>From</h5>
+												 <h5>Paket Wisata</h5>
 												 <div class="book_date">
-													 <form>
-														<input type="text" placeholder="Type Depature City" required="">
-													 </form>
+														<select name="id_paket"  required>
+								                            <option value="">Pilih Paket Wisata</option>
+								                            <?php foreach($result as $transaksi){ ?>
+								                            <option value="<?php echo $transaksi['id']; ?>"><?php echo $transaksi['nama']; ?></option>
+								                            <?php } ?>
+								                        </select>
 												 </div>					
 											 </li>
 											 <li  class="span1_of_1 left">
-												 <h5>To</h5>
+												 <h5>Username</h5>
 												 <div class="book_date">
-												 <form>
-													<input type="text" placeholder="Type Destination City" required="">
-												 </form>
+													<input type="text" name="id_member" value="<?php echo set_value('id_member')?>" required="">
 												 </div>		
 											 </li>
 											 <li  class="span1_of_1 left">
-												 <h5>Arrival</h5>
+												 <h5>Tanggal Berangkat</h5>
 												 <div class="book_date">
-													 <form>
-													 <input class="date" id="datepicker" type="text" value="2/08/2013" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '2/08/2013';}" required=>
-													 </form>
-												 </div>					
-											 </li>
-											 <li  class="span1_of_1 left">
-												 <h5>Depature</h5>
-												 <div class="book_date">
-												 <form>
-													<input class="date" id="datepicker1" type="text" value="22/08/2013" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '22/08/2013';}" required=>
-												 </form>
+													<input type="date" name="tanggalbrgkt" value="<?php echo set_value('tanggalbrgkt')?>" required="">
 												 </div>		
 											 </li>
-											 <li class="span1_of_1">
-												 <h5>Class</h5>
-											
-												 <div class="section_room">
-													  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-															<option value="null"></option>
-															<!-- <option value="null">Business</option>         
-															<option value="AX">First Class</option>
-															<option value="AX">Premium Economy</option> -->
-													  </select> 
-												 </div>	
+											 <li  class="span1_of_1 left">
+												 <h5>Jumlah Penumpang Dewasa</h5>
+												 <div class="book_date">
+													<input type="text" name="jml_dewasa" value="<?php echo set_value('jml_dewasa')?>" required="">
+												 </div>		
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Jumlah Penumpang Anak-anak</h5>
+												 <div class="book_date">
+													<input type="text" name="jml_anak" value="<?php echo set_value('jml_anak')?>" required="">
+												 </div>		
+											 </li>
+											 <li  class="span1_of_1 left">
+												 <h5>Pembayaran</h5>
+												 <div class="book_date">
+													<input type="text" name="pembayaran" value="<?php echo set_value('pembayaran')?>" required="">
+												 </div>		
 											 </li>
 											 <li class="span1_of_3">
 													<div class="date_btn">
-														<form>
-															<input type="submit" value="Find Flight" />
-														</form>
+															<input type="submit" name="btnSubmit" value="Simpan" />
 													</div>
 											 </li>
 											 <div class="clearfix"></div>
@@ -154,6 +155,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="clearfix"></div>
 							</div>
+						</form>
 					</div>
 					<!--
 				</div>

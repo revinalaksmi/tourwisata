@@ -29,6 +29,23 @@ class Transaction extends CI_Controller {
 		$data['isi'] = $this->transacmodel->GetPreview($id);
 		$this->load->view('preview', $data);
 	}
-	
-	
+	public function do_insert(){
+		$this->load->model('mymodel');
+		$data['result'] = $this->mymodel->get_all_categories();
+		$this->load->view('booking',$data);
+	    $this->form_validation->set_rules('id_member', 'ID Member', 'required');
+	    $this->form_validation->set_rules('tanggalbrgkt', 'Tanggal Berangkat', 'required');
+	    $this->form_validation->set_rules('jml_dewasa', 'Jumlah Penumpang Dewasa', 'required');
+	    $this->form_validation->set_rules('jml_anak', 'Jumlah Penumpan Anak-anak', 'required');
+	    $this->form_validation->set_rules('pembayaran', 'Pembayaran', 'required');
+
+		if ($this->form_validation->run() === FALSE)
+	    {
+	        $this->load->view('booking');
+	    } else {
+	    	$this->load->model('transacmodel');
+			$this->transacmodel->create_transaksi();
+			redirect('transaction');
+		}
+	}
 }

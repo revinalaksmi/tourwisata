@@ -8,9 +8,15 @@ class Mymodel extends CI_Model {
 		$this->db->select('id,nama,gambar');
 		$this->db->from('paket');
 		$data=$this->db->get();
-	
 		return $data->result_array();
 	}
+
+	public function get_all_categories()
+    {
+       $data = $this->db->get('paket');
+        return $data->result_array();
+    }
+
 	public function GetPreview($id=''){
 		$isi = $this->db->query('SELECT id,nama,tempat,hrg_dewasa,hrg_anak,fasilitas,syarat,gambar FROM paket where id = '.$id);
 		return $isi->result_array();
