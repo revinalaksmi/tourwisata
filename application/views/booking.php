@@ -98,6 +98,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                          ?>
 					 <?php echo validation_errors(); ?>
 					 <?php echo form_open_multipart('./transaction/do_insert/'); ?>
+
+					 <?php    
+                        $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
+                         ?>
+					 <?php echo validation_errors(); ?>
+					 <?php echo form_open_multipart('./transaction/do_update/'); ?>
 						<form>
 							<div class="b_room">
 								<div class="booking_room">
@@ -144,9 +150,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<input type="text" name="pembayaran" value="<?php echo set_value('pembayaran')?>" required="">
 												 </div>		
 											 </li>
-											 <li class="span1_of_3">
+											 <li class="span1_of_3 right">
 													<div class="date_btn">
 															<input type="submit" name="btnSubmit" value="Simpan" />
+															<input type="submit" name="btnSubmit" value="Update" />
 													</div>
 											 </li>
 											 <div class="clearfix"></div>
@@ -181,32 +188,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- container -->
 				<div class="container">
 					<div class="how-to-info">
-						<h3>HOW TO BOOK</h3>
-						<h4>Quisque lectus ipsum, fermentum eu sodales non, auctor in mauris. Nulla pretium cursus nulla, ac rutrum magna laoreet eu.
-							Phasellus vel est vel odio finibus lacinia. Donec a diam dictum, elementum ipsum et, pulvina
+						<h3>CARA BOOKING TIKET</h3>
+						<h4>Booking tiket merupakan proses pemesanan tiket berdasarkan jumlah penumpang, tanggal keberangkatan dan pemilihan paket liburan.
 						</h4>
-						<p>Duis vulputate auctor libero, eget viverra ante dapibus sit amet. Vestibulum auctor pellentesque enim, 
-						sed ornare metus vehicula eu. Etiam rhoncus eu urna ac feugiat. Praesent sed tempor urna, laoreet dignissim est. 
-						Aenean nec justo vitae arcu consequat lobortis. Sed iaculis et dui eu sollicitudin. Morbi id felis porttitor tellus 
-						viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam cursus 
-						leo nec enim vulputate finibus. Nulla at dui non nisi molestie posuere non sed ante. 
-						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Nulla at dui non nisi molestie posuere non sed ante. </p>
+						<p>Pada saat melakukan booking tiket tercantum harga yang harus segera dibayarkan sebelum time limit habis dan harga tiket belum tentu sama jika calon penumpang melakukan booking sejam berikutnya atau dua jam berikutnya bahkan untuk satu, dua, tiga hari ke depan. </p>
 					</div>
 					<div class="how-grids">
 						<div class="col-md-4 how-grid">
 							<span>1</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+							<a href="#">Isi Identitas Dengan Lengkap</a>
+							<p>Mengisi identitas dengan lengkap tanpa ada kessalahan apapun seperti username, nama , alamat, no telp sesuai identitas yang tertera pada KTP anda.</p>
 						</div>
 						<div class="col-md-4 how-grid">
 							<span>2</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+							<a href="#">Isi Paket Wisata Sesuai Dengan Destination</a>
+							<p>Mengisi paket wisata dengan lengkap sesuai destinansi yang anda inginkan.</p>
 						</div>
 						<div class="col-md-4 how-grid">
 							<span>3</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+							<a href="#">Bayar Harga Paket Wisata Tepat Waktu</a>
+							<p>Bayar harga tiket yang sudah anda booking. harga yang tercantum harus segera dibayarkan sebelum time limit habis.</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -223,29 +224,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="top-grid">
 							<img src="images/6.jpg" alt="">
 							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
+								<h3>DreamLand</h3>
+								<p>DreamLand Asyik.</p>
 							</div>
 						</div>
 						<div class="top-grid">
 							<img src="images/3.jpg" alt="">
 							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
+								<h3>Pantai</h3>
+								<p>Menikmati Senja .</p>
 							</div>
 						</div>
 						<div class="top-grid">
 							<img src="images/2.jpg" alt="">
 							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
+								<h3>Pusat Oleh-oleh</h3>
+								<p>Enjoy Shopping.</p>
 							</div>
 						</div>
 						<div class="top-grid">
 							<img src="images/4.jpg" alt="">
 							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
+								<h3>PlayGround</h3>
+								<p>Enjoy Play the Game .</p>
 							</div>
 						</div>
 						<div class="clearfix"> </div>

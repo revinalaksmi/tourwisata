@@ -25,4 +25,17 @@ class Transacmodel extends CI_Model {
         );
         return $this->db->insert('transaksi', $data);
     }
+
+    public function update_transaksi()
+    {
+        $data = array(
+            'id_paket'          => $this->input->post('id_paket'),
+            'id_member'         => $this->input->post('id_member'),
+            'tanggalbrgkt'        => $this->input->post('tanggalbrgkt'),
+            'jml_dewasa'        => $this->input->post('jml_dewasa'),
+            'jml_anak'        => $this->input->post('jml_anak'),
+            'pembayaran'        => $this->input->post('pembayaran')
+        );
+        return $this->db->update('transaksi', $data);
+    }
 }
