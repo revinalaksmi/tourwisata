@@ -45,9 +45,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<span class="menu"><img src=<?php echo base_url('./assets/images/menu.png'); ?>" alt=""></span>
 							<ul class="cl-effect-1">
 								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
-								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
-								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
-								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li> 
+								<li><a href="<?php echo base_url('./transaction/do_insert/'); ?>">BOOKING</a></li> 
+								<li><a href="<?php echo base_url('./transaction'); ?>">TRANSACTION</a></li>  
+							</ul>
 							</ul>
 							<!-- script-for-menu -->
 							 <script>
@@ -149,7 +149,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											 
 											 <li class="span1_of_3">
 													<div class="date_btn">
-															<input type="submit" name="btnSubmit" value="Simpan" />
+															<input type="submit"  value="Simpan" />
 													</div>
 											 </li>
 											 <div class="clearfix"></div>

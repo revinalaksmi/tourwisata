@@ -47,9 +47,7 @@
 						<span class="menu"><img src="<?php echo base_url('./assets/images/menu.png');?>" alt=""></span>
 							<ul class="cl-effect-1">
 								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
-								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
-								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
-								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li>  
+								<li><a href="<?php echo base_url('./transaction/do_insert/'); ?>">BOOKING</a></li> 
 								<li><a href="<?php echo base_url('./transaction'); ?>">TRANSACTION</a></li>  
 							</ul>
 							<!-- script-for-menu -->
@@ -91,7 +89,7 @@
                 		<?php foreach($result as $d){ ?>
           			<tr>
 		               <td><?php echo $d['id']; ?></td>
-		               <td><?php echo $d['id_paket']; ?></td>
+		               <td><?php echo $d['nama']; ?></td>
 		               <td><?php echo $d['id_member']; ?></td>
 		               <td><?php echo $d['tanggalbrgkt']; ?></td>
 		               <td><?php echo $d['jml_dewasa']; ?></td>
@@ -102,16 +100,12 @@
             </table>
         </div>
 
-      
-        
-      
-
-
-				<div class="footer">
+   
+		<div class="footer">
 				<!-- container -->
 				
 			<!-- //footer -->
-			
+		
 		<script type="text/javascript">
 		$(document).ready(function(){
 			$('#myTable').DataTable();

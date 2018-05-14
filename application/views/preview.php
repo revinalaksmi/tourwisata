@@ -44,10 +44,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="top-nav">
 						<span class="menu"><img src="images/menu.png" alt=""></span>
 							<ul class="cl-effect-1">
-								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
-								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
-								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
-								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li> 
+								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>
+								<li><a href="<?php echo base_url('./transaction/do_insert/'); ?>">BOOKING</a></li> 
+								<li><a href="<?php echo base_url('./transaction'); ?>">TRANSACTION</a></li>  
+
 							</ul>
 							<!-- script-for-menu -->
 							 <script>
@@ -67,9 +67,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="booking">
 			<!-- container -->
 			<div class="container">
-				<div class="booking-info">
-					<h3>booking</h3>
-				</div>
 				<div class="booking-form">
 					<!---strat-date-piker---->
 					<link rel="stylesheet" href="css/jquery-ui.css" />
@@ -100,9 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>WE ARE PROVIDE</h3>
 					<div class="col-md-7 booking-grid-left">
 					<?php foreach ($isi as $data) { ?>
-						<div class="head-prev">
-							<h1> <?php echo $data['nama']; ?></h1>
-						</div> 
+						<h1><b><?php echo $data['nama']; ?><b></h1>
 						<h4><b>Tempat yang akan dikunjungi</b></h4>
 							<p><?php echo $data['tempat']; ?></p>
 						<p><h4><b>Fasilitas</b></h4></p>
@@ -134,42 +129,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 
 
-			<!-- //container 
-			<div class="how-to">
-				<!-- container -->
-				<div class="container">
-					<div class="how-to-info">
-						<h3>HOW TO BOOK</h3>
-						<h4>Quisque lectus ipsum, fermentum eu sodales non, auctor in mauris. Nulla pretium cursus nulla, ac rutrum magna laoreet eu.
-							Phasellus vel est vel odio finibus lacinia. Donec a diam dictum, elementum ipsum et, pulvina
-						</h4>
-						<p>Duis vulputate auctor libero, eget viverra ante dapibus sit amet. Vestibulum auctor pellentesque enim, 
-						sed ornare metus vehicula eu. Etiam rhoncus eu urna ac feugiat. Praesent sed tempor urna, laoreet dignissim est. 
-						Aenean nec justo vitae arcu consequat lobortis. Sed iaculis et dui eu sollicitudin. Morbi id felis porttitor tellus 
-						viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam cursus 
-						leo nec enim vulputate finibus. Nulla at dui non nisi molestie posuere non sed ante. 
-						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Nulla at dui non nisi molestie posuere non sed ante. </p>
-					</div>
-					<div class="how-grids">
-						<div class="col-md-4 how-grid">
-							<span>1</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
-						<div class="col-md-4 how-grid">
-							<span>2</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
-						<div class="col-md-4 how-grid">
-							<span>3</span>
-							<a href="#">LOREM IPSUM DOLOR SIT</a>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- //container -->
+			
 			</div>
 			<div class="visiting">
 				<!-- container -->
@@ -223,8 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="footer-right">
 					<div class="footer-nav">
 						<ul>
-							<li><a href="index.html">HOME</a></li>                                                  
-							<li><a href="about.html">ABOUT</a></li>  
+							<li><a href="index.html">HOME</a></li>   
 							<li><a href="booking.html">BOOKING</a></li>  
 							<li><a href="news.html">NEWS</a></li>  
 							<li><a href="mail.html">MAIL US</a></li>  
