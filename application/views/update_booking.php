@@ -122,36 +122,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											 <li  class="span1_of_1 left">
 												 <h5>Username</h5>
 												 <div class="book_date">
-													<input type="text" name="id_member" value="<?php echo set_value('id_member')?>" required="">
+													<input type="text" name="id_member" value="<?php echo $transaksi['id_member']?>" required="">
 												 </div>		
 											 </li>
 											 <li  class="span1_of_1 left">
 												 <h5>Tanggal Berangkat</h5>
 												 <div class="book_date">
-													<input type="date" name="tanggalbrgkt" value="<?php echo set_value('tanggalbrgkt')?>" required="">
+													<input type="date" name="tanggalbrgkt" value="<?php echo $transaksi['tanggalbrgkt'] ?>" required="">
 												 </div>		
 											 </li>
 											 <li  class="span1_of_1 left">
 												 <h5>Jumlah Penumpang Dewasa</h5>
 												 <div class="book_date">
-													<input type="text" name="jml_dewasa" value="<?php echo set_value('jml_dewasa')?>" required="">
+													<input type="text" name="jml_dewasa" value="<?php echo $transaksi['jml_dewasa']?>" required="">
 												 </div>		
 											 </li>
 											 <li  class="span1_of_1 left">
 												 <h5>Jumlah Penumpang Anak-anak</h5>
 												 <div class="book_date">
-													<input type="text" name="jml_anak" value="<?php echo set_value('jml_anak')?>" required="">
+													<input type="text" name="jml_anak" value="<?php echo $transaksi['jml_anak']?>" required="">
 												 </div>		
 											 </li>
 											 <li  class="span1_of_1 left">
 												 <h5>Pembayaran</h5>
 												 <div class="book_date">
-													<input type="text" name="pembayaran" value="<?php echo set_value('pembayaran')?>" required="">
+													<input type="text" name="pembayaran" value="<?php echo $transaksi['pembayaran']?>" required="">
 												 </div>		
 											 </li>
 											 <li class="span1_of_3 right">
 													<div class="date_btn">
 															<input type="submit" name="btnSubmit" value="Simpan" />
+															<input type="submit" name="btnSubmit" value="Update" />
 															
 													</div>
 											 </li>

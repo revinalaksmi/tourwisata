@@ -48,4 +48,62 @@ class Transaction extends CI_Controller {
 			redirect('transaction');
 		}
 	}
+
+	public function edit_data($id=''){
+		$this->load->model('transacmodel');
+		$biodata = $this->transacmodel->GetPreview($id);
+		$data['transaksi'] = array(
+			"id" 			=> $biodata[0]['id'],
+			"id_paket" 			=> $biodata[0]['id_paket'],
+			"id_member"		=> $biodata[0]['id_member'],
+			"tanggalbrgkt"	=> $biodata[0]['tanggalbrgkt'],
+			"jml_dewasa" 		=> $biodata[0]['jml_dewasa'],
+			"jml_anak"		=> $biodata[0]['jml_anak'],
+			"pembayaran" 		=> $biodata[0]['pembayaran'],
+			
+		);
+		
+		$this->load->view('update_booking',$data);
+	}
+	public function do_update(){
+		$config['upload_path']          = 'assets/images/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 1000;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('userfile'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+               print_r($error);
+        }
+        else
+        {
+			$result_upload=$this->upload->data();
+			$id 			= $_POST['id'];
+			$id_paket			= $_POST['id_paket'];
+			$id_member		= $_POST['id_member'];
+			$tanggalbrgkt	= $_POST['tanggalbrgkt'];
+			$jml_dewasa		= $_POST['jml_dewasa'];
+			$jml_anak		= $_POST['jml_anak'];
+			$pembayaran 		= $_POST['pembayaran'];
+			
+			$data_update 	= array(
+									'id'			=> $id ,
+									'id_paket'		=> $id_paket,
+									'id_member'	=> $id_member,
+									'tanggalbrgkt' 		=> $tanggalbrgkt,
+									'jml_dewasa' 	=> $jml_dewasa,
+									'jml_anak' 		=> $jml_anak,
+									'pembayaran'		=> $pembayaran
+				);
+			$this->load->model('mymodel');
+			$where = array('id' => $id);
+			$res = $this->mymodel->UpdateData('paket',$data_update,$where);
+			if($res>=1){
+				$this->session->set_flashdata('pesan','Update Data Sukses');
+				redirect('tour');
+			}
+		}
+	}
 }

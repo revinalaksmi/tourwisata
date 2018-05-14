@@ -38,4 +38,9 @@ class Transacmodel extends CI_Model {
         );
         return $this->db->update('transaksi', $data);
     }
+
+    public function GetPreview($id=''){
+        $isi = $this->db->query('SELECT id,id_paket,id_member,tanggalbrgkt,jml_dewasa,jml_anak,pembayaran FROM transaksi where id = '.$id);
+        return $isi->result_array();
+    }
 }

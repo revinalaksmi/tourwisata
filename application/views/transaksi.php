@@ -85,21 +85,40 @@
 	                    <th>Penumpang Dewasa</th>
 	                    <th>Penumpang Anak-anak</th>
 	                    <th>Pembayaran</th>
+	                    <th style="width:125px;">Action
+          </p></th>
+        
                     </tr>
                 </thead>
                 <tbody>
-                		<?php foreach($result as $d){ ?>
+                		<?php foreach($result as $transaksi){ ?>
           			<tr>
-		               <td><?php echo $d['id']; ?></td>
-		               <td><?php echo $d['id_paket']; ?></td>
-		               <td><?php echo $d['id_member']; ?></td>
-		               <td><?php echo $d['tanggalbrgkt']; ?></td>
-		               <td><?php echo $d['jml_dewasa']; ?></td>
-		               <td><?php echo $d['jml_anak']; ?></td>
-		               <td><?php echo $d['pembayaran']; ?></td>
+		               <td><?php echo $transaksi['id']; ?></td>
+		               <td><?php echo $transaksi['id_paket']; ?></td>
+		               <td><?php echo $transaksi['id_member']; ?></td>
+		               <td><?php echo $transaksi['tanggalbrgkt']; ?></td>
+		               <td><?php echo $transaksi['jml_dewasa']; ?></td>
+		               <td><?php echo $transaksi['jml_anak']; ?></td>
+		               <td><?php echo $transaksi['pembayaran']; ?></td>
+		               								<td>
+									<a class="btn btn-warning" href="<?php echo base_url()."Transaction/edit_data/".$transaksi['id']; ?>">Edit</a>
+									<button class="btn btn-danger" onclick="delete_transaksi(<?php echo $transaksi['id'];?>)">Delete</button>
+
+
+								</td>
 		            </tr> <?php } ?>
                 </tbody>
-            </table>
+                	<!-- <tr>
+	                    <th>ID</th>
+	                    <th>Paket Wisata</th>
+	                    <th>Username</th>
+	                    <th>Tanggal Berangkat</th>
+	                    <th>Penumpang Dewasa</th>
+	                    <th>Penumpang Anak-anak</th>
+	                    <th>Pembayaran</th>
+	                    <th> Action </th>
+
+            </table> -->
         </div>
 
       
