@@ -42,9 +42,7 @@
 						<span class="menu"><img src="<?php echo base_url('./assets/images/menu.png');?>" alt=""></span>
 							<ul class="cl-effect-1">
 								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
-								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
-								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
-								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li>  
+								<li><a href="<?php echo base_url('./transaction/do_insert/'); ?>">BOOKING</a></li> 
 								<li><a href="<?php echo base_url('./transaction'); ?>">TRANSACTION</a></li>  
 							</ul>
 							<!-- script-for-menu -->

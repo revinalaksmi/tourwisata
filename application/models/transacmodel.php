@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Transacmodel extends CI_Model {
 	
 	public function GetArtikel(){
-        $this->db->select('transaksi.id,id_paket,id_member,tanggalbrgkt,jml_dewasa,jml_anak,pembayaran');
+        $this->db->select('transaksi.id,paket.nama,id_member,tanggalbrgkt,jml_dewasa,jml_anak,pembayaran');
         $this->db->join('paket', 'transaksi.id_paket =paket.id');
         $this->db->join('member', 'transaksi.id_member =member.username');
 

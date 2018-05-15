@@ -49,7 +49,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
 								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
 								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
-								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li> 
 							</ul>
 							<!-- script-for-menu -->
 							 <script>

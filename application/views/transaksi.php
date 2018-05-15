@@ -47,9 +47,7 @@
 						<span class="menu"><img src="<?php echo base_url('./assets/images/menu.png');?>" alt=""></span>
 							<ul class="cl-effect-1">
 								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
-								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
-								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
-								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li>  
+								<li><a href="<?php echo base_url('./transaction/do_insert/'); ?>">BOOKING</a></li> 
 								<li><a href="<?php echo base_url('./transaction'); ?>">TRANSACTION</a></li>  
 							</ul>
 							<!-- script-for-menu -->
@@ -73,7 +71,7 @@
 
             <div class="read-more red">
 					<a href="<?php echo base_url('./transaction/do_insert/'); ?>">New Transaction</a>
-			</div><br><br>
+			</div>
 
             <table id="myTable" class="display" cellspacing="0" width="100%">
                 <thead>
@@ -85,8 +83,7 @@
 	                    <th>Penumpang Dewasa</th>
 	                    <th>Penumpang Anak-anak</th>
 	                    <th>Pembayaran</th>
-	                    <th style="width:125px;">Action
-          </p></th>
+	                    <th style="width:125px;">Action </p></th>
         
                     </tr>
                 </thead>
@@ -94,7 +91,7 @@
                 		<?php foreach($result as $transaksi){ ?>
           			<tr>
 		               <td><?php echo $transaksi['id']; ?></td>
-		               <td><?php echo $transaksi['id_paket']; ?></td>
+		               <td><?php echo $transaksi['nama']; ?></td>
 		               <td><?php echo $transaksi['id_member']; ?></td>
 		               <td><?php echo $transaksi['tanggalbrgkt']; ?></td>
 		               <td><?php echo $transaksi['jml_dewasa']; ?></td>
@@ -121,16 +118,12 @@
             </table> -->
         </div>
 
-      
-        
-      
-
-
-				<div class="footer">
+   
+		<div class="footer">
 				<!-- container -->
 				
 			<!-- //footer -->
-			
+		
 		<script type="text/javascript">
 		$(document).ready(function(){
 			$('#myTable').DataTable();

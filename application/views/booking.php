@@ -45,9 +45,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<span class="menu"><img src=<?php echo base_url('./assets/images/menu.png'); ?>" alt=""></span>
 							<ul class="cl-effect-1">
 								<li><a href="<?php echo base_url('./tour'); ?>">HOME</a></li>  
-								<li><a  href="<?php echo base_url('./Tour/about'); ?>">ABOUT</a></li>
-								<li><a href="<?php echo base_url('./Tour/booking'); ?>">BOOKING</a></li> 
-								<li><a href="<?php echo base_url('./Tour/news'); ?>">NEWS</a></li> 
+								<li><a href="<?php echo base_url('./transaction/do_insert/'); ?>">BOOKING</a></li> 
+								<li><a href="<?php echo base_url('./transaction'); ?>">TRANSACTION</a></li>  
+							</ul>
 							</ul>
 							<!-- script-for-menu -->
 							 <script>
@@ -102,7 +102,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <?php    
                         $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
                          ?>
-
 						<form>
 							<div class="b_room">
 								<div class="booking_room">
@@ -152,7 +151,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											 <li class="span1_of_3 right">
 													<div class="date_btn">
 															<input type="submit" name="btnSubmit" value="Simpan" />
-															
 													</div>
 											 </li>
 											 <div class="clearfix"></div>
@@ -163,26 +161,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</form>
 					</div>
-					<!--
-				</div>
-				<div class="clearfix"></div>
-				<div class="booking-grids">
-					<h3>WE ARE PROVIDE</h3>
-					<div class="col-md-7 booking-grid-left">
-						<h4>QUISQUE LECTUS IPSUM, FERMENTUM EU SODALES NON, AUCTOR IN MAURIS. NULLA PRETIUM CURSUS NULLA, AC RUTRUM MAGNA LAOREET EU.</h4>
-						<p>Maecenas ultricies molestie efficitur. Maecenas bibendum tincidunt nulla at scelerisque. Fusce sodales nibh ex. Proin vel commodo neque. In congue neque ac venenatis aliquam. Sed vestibulum cursus velit faucibus tempor. Maecenas posuere pellentesque erat, vel auctor mauris fringilla ac. Proin euismod orci nec felis efficitur, a pulvinar nisl viverra. Etiam eu finibus ipsum, id molestie nunc</p>
-						<p>Maecenas ultricies molestie efficitur. Maecenas bibendum tincidunt nulla at scelerisque. Fusce sodales nibh ex. Proin vel commodo neque. In congue neque ac venenatis aliquam.Maecenas bibendum tincidunt nulla at scelerisque.</p>
-						<div class="read-more red">
-							<a href="#">Read More >></a>
-						</div>
-					</div>
-					<div class="col-md-5 booking-grid-right">
-						<img src="images/11.jpg" alt="">
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<!-- //container -->
+				
 			<div class="how-to">
 				<!-- container -->
 				<div class="container">
