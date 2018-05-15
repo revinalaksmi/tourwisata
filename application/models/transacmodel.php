@@ -39,8 +39,31 @@ class Transacmodel extends CI_Model {
         return $this->db->update('transaksi', $data);
     }
 
+    //fungsi delete transaksi
+    public function delete_transaksi($id)
+    {
+        if ( !empty($id) ){
+            $delete = $this->db->delete('transaksi', array('id'=>$id) );
+            return $delete ? true : false;
+        } else {
+            return false;
+        }
+    }
+
     public function GetPreview($id=''){
         $isi = $this->db->query('SELECT id,id_paket,id_member,tanggalbrgkt,jml_dewasa,jml_anak,pembayaran FROM transaksi where id = '.$id);
         return $isi->result_array();
     }
+
+    public function get_transaksi_by_id($id)
+    {
+        $this->db->select('transaksi.id,id_paket,id_member,tanggalbrgkt,jml_dewasa,jml_anak,pembayaran');
+        $this->db->join('paket', 'transaksi.id_paket =paket.id');
+        $this->db->join('member', 'transaksi.id_member =member.username');
+
+        $data = $this->db->get_where('transaksi', array('transaksi.id' => $id));
+                    
+        return $data->row();
+    }
 }
+

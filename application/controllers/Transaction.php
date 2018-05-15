@@ -65,6 +65,19 @@ class Transaction extends CI_Controller {
 		
 		$this->load->view('update_booking',$data);
 	}
+
+	public function delete_transaksi($id)
+	{
+		$this->load->model('transacmodel');
+
+		$data['transaksi'] = $this->transacmodel->get_transaksi_by_id($id);
+
+		if ( empty($id) || !$data['transaksi'] ) show_404();
+
+        $this->transacmodel->delete_transaksi($id);
+	    redirect('Transaction');
+	}
+
 	public function do_update(){
 		$config['upload_path']          = 'assets/images/';
         $config['allowed_types']        = 'gif|jpg|png';
