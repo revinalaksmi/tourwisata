@@ -99,7 +99,7 @@
 		               <td><?php echo $transaksi['pembayaran']; ?></td>
 		               								<td>
 									<a class="btn btn-warning" href="<?php echo base_url()."Transaction/edit_data/".$transaksi['id']; ?>">Edit</a>
-									<button class="btn btn-danger" onclick="delete_transaksi(<?php echo $transaksi['id'];?>)">Delete</button>
+									<a class="btn btn-danger" href="<?php echo base_url()."Transaction/delete_transaksi/".$transaksi['id']; ?>">Delete</a>
 
 
 								</td>

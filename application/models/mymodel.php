@@ -11,8 +11,12 @@ class Mymodel extends CI_Model {
 		return $data->result_array();
 	}
 
-	public function get_all_categories()
+	public function get_all_categories($limit = FALSE, $offset = FALSE)
     {
+    	if ($limit) {
+        $this->db->limit($limit, $offset);
+      }
+
        $data = $this->db->get('paket');
         return $data->result_array();
     }
@@ -33,6 +37,11 @@ class Mymodel extends CI_Model {
 		$this->db->where($where);
 		$this->db->delete($table);
 		}	
+
+public function get_total()
+  {
+    return $this->db->count_all("paket");
+  }
 
 	
 
