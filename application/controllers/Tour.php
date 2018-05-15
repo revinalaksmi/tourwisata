@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tour extends CI_Controller {
-
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,9 +19,34 @@ class Tour extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('mymodel');
-		$data['result'] = $this->mymodel->GetArtikel();
-		$this->load->view('home',$data);
+		 $this->load->library('pagination');
+		 $this->load->model('mymodel');
+            $data['page_title'] = 'List Artikel';
+
+            $limit_per_page = 1;
+
+            $start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
+
+            $total_records = $this->mymodel->get_total();
+
+            if ($total_records > 0) {
+
+                $data['all_categories'] = $this->mymodel->get_all_categories($limit_per_page,$start_index);
+
+                $config['base_url'] = base_url() . 'Tour/index';
+                $config['total_rows'] = $total_records;
+                $config['per_page'] = $limit_per_page;
+
+                $this->pagination->initialize($config);
+
+                $data['links'] = $this->pagination->create_links();
+                // print_r($data['all_categories']) ;
+                // echo $data['links'];
+                // echo $limit_per_page;
+                // echo $start_index;
+                // echo $total_records;
+                $this->load->view('home',$data);
+             }
 	}
 
 	public function do_preview($id=''){

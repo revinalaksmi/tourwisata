@@ -125,7 +125,7 @@
 					<a href="<?php echo base_url('./tour/add_data/'); ?>">New Destination</a>
 				</div>
 				<div class="top-grids">
-				<?php foreach($result as $d){ ?>
+				<?php foreach($all_categories as $d){ ?>
 					<div class="top-grid">
 						<img src="<?php echo base_url('assets/images/'.$d['gambar']); ?>">
 						<div class="top-grid-info">
@@ -136,6 +136,11 @@
 							</div>
 						</div>
 					</div> <?php } ?> 
+						<div class="container" style="margin-top: 200px;">
+					<?php 
+  					echo $links;
+					?>
+					</div>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
