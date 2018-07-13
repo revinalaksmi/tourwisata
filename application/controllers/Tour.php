@@ -45,18 +45,24 @@ class Tour extends CI_Controller {
                 // echo $limit_per_page;
                 // echo $start_index;
                 // echo $total_records;
+                $this->load->view('templates/header-home', $data);
                 $this->load->view('home',$data);
+               $this->load->view('templates/footer');
              }
 	}
 
 	public function do_preview($id=''){
 		$this->load->model('mymodel');
 		$data['isi'] = $this->mymodel->GetPreview($id);
+		$this->load->view('templates/header', $data);
 		$this->load->view('preview', $data);
+		$this->load->view('templates/footer');
 	}
 
 	public function add_data(){
+		$this->load->view('templates/header', $data);
 		$this->load->view('add_paket');
+		$this->load->view('templates/footer');
 	}
 
 	public function do_insert(){
@@ -71,7 +77,9 @@ class Tour extends CI_Controller {
 	   
 	    if ($this->form_validation->run() === FALSE)
 	    {
+	    	$this->load->view('templates/header', $data);
 	        $this->load->view('add_paket');
+	        $this->load->view('templates/footer');
 	    }
 
 		$config['upload_path']          = 'assets/images/';
@@ -133,7 +141,9 @@ class Tour extends CI_Controller {
 			"syarat" 		=> $biodata[0]['syarat'],
 			"gambar"		=> $biodata[0]['gambar']
 		);
+		$this->load->view('templates/header', $data);
 		$this->load->view('edit_paket',$data);
+		$this->load->view('templates/footer');
 	}
 	public function do_update(){
 		$config['upload_path']          = 'assets/images/';
@@ -177,13 +187,19 @@ class Tour extends CI_Controller {
 		}
 	}
 	public function about(){
+		$this->load->view('templates/header', $data);
 		$this->load->view('about');
+		$this->load->view('templates/footer');
 	}
 	public function booking(){
+		$this->load->view('templates/header', $data);
 		$this->load->view('booking');
+		$this->load->view('templates/footer');
 	}
 	public function news(){
+		$this->load->view('templates/header', $data);
 		$this->load->view('news');
+		$this->load->view('templates/footer');
 	}
 	public function hapus($id){
 		$this->load->model('mymodel');

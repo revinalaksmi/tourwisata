@@ -22,17 +22,22 @@ class Transaction extends CI_Controller {
 	{
 		$this->load->model('transacmodel');
 		$data['result'] = $this->transacmodel->GetArtikel();
+		$this->load->view('templates/header', $data);
 		$this->load->view('transaksi',$data);
 	}
 	public function do_preview($id=''){
 		$this->load->model('transac_model');
 		$data['isi'] = $this->transacmodel->GetPreview($id);
+		$this->load->view('templates/header', $data);
 		$this->load->view('preview', $data);
+		$this->load->view('templates/footer');
 	}
 	public function do_insert(){
 		$this->load->model('mymodel');
 		$data['result'] = $this->mymodel->get_all_categories();
+		$this->load->view('templates/header', $data);
 		$this->load->view('booking',$data);
+		$this->load->view('templates/footer');
 	    $this->form_validation->set_rules('id_member', 'ID Member', 'required');
 	    $this->form_validation->set_rules('tanggalbrgkt', 'Tanggal Berangkat', 'required');
 	    $this->form_validation->set_rules('jml_dewasa', 'Jumlah Penumpang Dewasa', 'required');
@@ -41,7 +46,9 @@ class Transaction extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 	    {
+	    	$this->load->view('templates/header', $data);
 	        $this->load->view('booking');
+	        $this->load->view('templates/footer');
 	    } else {
 	    	$this->load->model('transacmodel');
 			$this->transacmodel->create_transaksi();
@@ -62,8 +69,9 @@ class Transaction extends CI_Controller {
 			"pembayaran" 		=> $biodata[0]['pembayaran'],
 			
 		);
-		
+		$this->load->view('templates/header', $data);
 		$this->load->view('update_booking',$data);
+		$this->load->view('templates/footer');
 	}
 
 	public function delete_transaksi($id)
