@@ -23,7 +23,7 @@ class Tour extends CI_Controller {
 		 $this->load->model('mymodel');
             $data['page_title'] = 'List Artikel';
 
-            $limit_per_page = 1;
+            $limit_per_page = 4;
 
             $start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
 

@@ -97,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
                          ?>
 					 <?php echo validation_errors(); ?>
-					 <?php echo form_open_multipart('./transaction/do_insert/'); ?>
+					 <?php echo form_open_multipart('./transaction/do_update/'); ?>
 
 					 <?php    
                         $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
@@ -151,7 +151,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											 </li>
 											 <li class="span1_of_3 right">
 													<div class="date_btn">
-															<input type="submit" name="btnSubmit" value="Simpan" />
+															<!-- <input type="submit" name="btnSubmit" value="Simpan" /> -->
 															<input type="submit" name="btnSubmit" value="Update" />
 															
 													</div>
