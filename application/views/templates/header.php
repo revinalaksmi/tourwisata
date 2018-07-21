@@ -8,6 +8,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>Travel-mate Bootstarp Website Template | Home :: w3layouts</title>
+		<!-- datatables -->
+		<link href="<?php echo base_url('/assets/datatables/css/dataTables.bootstrap.min.css');?>" rel="stylesheet" type="text/css" media="all">
+		<link href="<?php echo base_url('./assets/datatables/css/jquery.dataTables.min.css');?>" rel="stylesheet" type="text/css" media="all">
+		<script  src="<?php echo base_url('./assets/datatables/js/dataTables.bootstrap.min.js');?>"></script>
+		<script  src="<?php echo base_url('./assets/datatables/js/jquery.dataTables.min.js');?>"></script>
+
 		<link href="<?php echo base_url('./assets/css/style.css');?>" rel="stylesheet" type="text/css" media="all" >
 		<link href="<?php echo base_url('./assets/css/bootstrap.css');?>" rel="stylesheet" type="text/css" media="all">
 		<!-- web-font -->

@@ -24,6 +24,7 @@ class Transaction extends CI_Controller {
 		$data['result'] = $this->transacmodel->GetArtikel();
 		$this->load->view('templates/header', $data);
 		$this->load->view('transaksi',$data);
+		$this->load->view('templates/footer');
 	}
 	public function do_preview($id=''){
 		$this->load->model('transac_model');
