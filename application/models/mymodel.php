@@ -17,7 +17,30 @@ class Mymodel extends CI_Model {
         $this->db->limit($limit, $offset);
       }
 
-       $data = $this->db->get('paket');
+       // $data = $this->db->get('paket');
+      $data = $this->db->get_where('paket', 'level'==1);
+        return $data->result_array();
+    }
+
+    public function get_indo($limit = FALSE, $offset = FALSE)
+    {
+    	if ($limit) {
+        $this->db->limit($limit, $offset);
+      }
+
+       // $data = $this->db->get('paket');
+      $data = $this->db->get('paket');
+        return $data->result_array();
+    }
+
+    public function get_luar($limit = FALSE, $offset = FALSE)
+    {
+    	if ($limit) {
+        $this->db->limit($limit, $offset);
+      }
+
+       // $data = $this->db->get('paket');
+      $data = $this->db->get('paket2');
         return $data->result_array();
     }
 

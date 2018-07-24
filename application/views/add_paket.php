@@ -162,29 +162,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					
 			
-		<!-- footer -->
-		<div class="footer">
-			<!-- container -->
-			<div class="container">
-				<div class="footer-left">
-					<p>Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-				</div>
-				<div class="footer-right">
-					<div class="footer-nav">
-						<ul>
-							<li><a href="index.html">HOME</a></li>                                                  
-							<li><a href="about.html">ABOUT</a></li>  
-							<li><a href="booking.html">BOOKING</a></li>  
-							<li><a href="news.html">NEWS</a></li>  
-							<li><a href="mail.html">MAIL US</a></li>  
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<!-- //container -->
-		</div>
-		<!-- //footer -->
+		
 		<script type="text/javascript">
 									$(document).ready(function() {
 										/*

@@ -131,69 +131,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			
 			</div>
-			<div class="visiting">
-				<!-- container -->
-				<div class="container">
-					<div class="visiting-info">
-						<h3>VISITING PLACES</h3>
-					</div>
-					<div class="top-grids">
-						<div class="top-grid">
-							<img src="images/6.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="top-grid">
-							<img src="images/3.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="top-grid">
-							<img src="images/2.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="top-grid">
-							<img src="images/4.jpg" alt="">
-							<div class="top-grid-info visiting-grid">
-								<h3>Vestibulum auctor</h3>
-								<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices .</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- //container -->
-			</div>
-		</div>
-		<!-- booking -->
-		<!-- footer -->
-		<div class="footer">
-			<!-- container -->
-			<div class="container">
-				<div class="footer-left">
-					<p>Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-				</div>
-				<div class="footer-right">
-					<div class="footer-nav">
-						<ul>
-							<li><a href="index.html">HOME</a></li>   
-							<li><a href="booking.html">BOOKING</a></li>  
-							<li><a href="news.html">NEWS</a></li>  
-							<li><a href="mail.html">MAIL US</a></li>  
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<!-- //container -->
-		</div>
+			
 		<!-- //footer -->
 		<script type="text/javascript">
 									$(document).ready(function() {

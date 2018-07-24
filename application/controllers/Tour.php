@@ -31,7 +31,9 @@ class Tour extends CI_Controller {
 
             if ($total_records > 0) {
 
-                $data['all_categories'] = $this->mymodel->get_all_categories($limit_per_page,$start_index);
+                // $data['all_categories'] = $this->mymodel->get_all_categories($limit_per_page,$start_index);
+                $data['all_indo'] = $this->mymodel->get_indo($limit_per_page,$start_index);
+                $data['all_luar'] = $this->mymodel->get_luar($limit_per_page,$start_index);
 
                 $config['base_url'] = base_url() . 'Tour/index';
                 $config['total_rows'] = $total_records;
@@ -45,7 +47,9 @@ class Tour extends CI_Controller {
                 // echo $limit_per_page;
                 // echo $start_index;
                 // echo $total_records;
+                
                 $this->load->view('home',$data);
+
              }
 	}
 
@@ -110,7 +114,12 @@ class Tour extends CI_Controller {
 								);
 			print_r($data_insert);
 			$this->load->model('mymodel');
-			$res = $this->mymodel->InsertData('paket', $data_insert);
+			// if(level==1){
+				$res = $this->mymodel->InsertData('paket', $data_insert);
+			// } else {
+				// $res = $this->mymodel->InsertData('paket2', $data_insert);
+			// }
+			
 			
 			if($res>=1){
 				$this->session->set_flashdata('pesan','Tambah Data Sukses');
@@ -169,7 +178,12 @@ class Tour extends CI_Controller {
 				);
 			$this->load->model('mymodel');
 			$where = array('id' => $id);
-			$res = $this->mymodel->UpdateData('paket',$data_update,$where);
+			// $res = $this->mymodel->UpdateData('paket',$data_update,$where);
+			// if(level==1){
+				$res = $this->mymodel->UpdateData('paket', $data_update);
+			// } else {
+				// $res = $this->mymodel->UpdateData('paket2', $data_update);
+			// }
 			if($res>=1){
 				$this->session->set_flashdata('pesan','Update Data Sukses');
 				redirect('tour');
@@ -188,7 +202,12 @@ class Tour extends CI_Controller {
 	public function hapus($id){
 		$this->load->model('mymodel');
 		$where = array('id' => $id);
-		$this->mymodel->hapus_data($where,'paket');
+		// $this->mymodel->hapus_data($where,'paket');
+		// if(level==1){
+				$this->mymodel->hapus_data($where,'paket');
+			// } else {
+				/*$this->mymodel->hapus_data($where,'paket2');*/
+			// }
 		redirect('tour');
 	}
 

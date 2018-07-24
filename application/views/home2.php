@@ -120,10 +120,10 @@
 					<p>Pellentesque tempor sem in scelerisque mollis.</p>
 				</div>
 				<div class="read-more red">
-					<a href="<?php echo base_url('./tour/add_data/'); ?>">New Destination</a>
+					<a href="<?php echo base_url('./tour/add_data/'); ?>">New Destination GOLD</a>
 				</div>
 				<div class="top-grids">
-				<?php foreach($all_indo as $d){ ?>
+				<?php foreach($all_luar as $d){ ?>
 					<div class="top-grid">
 						<img src="<?php echo base_url('assets/images/'.$d['gambar']); ?>">
 						<div class="top-grid-info">
