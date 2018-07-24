@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 	<head>
@@ -111,6 +112,8 @@
 			<!-- container -->
 		</div>
 		<!-- //header -->
+=======
+>>>>>>> 48a377a113617f2b8be0b759e1ee25326630e59a
 		<!-- banner-grids -->
 		<div class="banner-grids">
 			<!-- container -->
@@ -149,6 +152,7 @@
 		</div>
 		<!-- //banner-grids -->
 		<!-- before -->
+<<<<<<< HEAD
 		
 		<script type="text/javascript">
 									$(document).ready(function() {
@@ -169,3 +173,41 @@
 	<!-- content-Get-in-touch -->
 	</body>
 </html>
+=======
+		<div class="before">
+			<!-- container -->
+			<div class="container">
+				<h2>Before you leave</h2>
+				<div class="before-grids">
+					<div class="before-grid">
+						<h3>visa & documents</h3>
+						<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+							Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+						</p>
+					</div>
+					<div class="before-grid">
+						<h3>visa & documents</h3>
+						<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+							Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+						</p>
+					</div>
+					<div class="before-grid">
+						<h3>visa & documents</h3>
+						<p>Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+							Morbi id felis porttitor tellus viverra pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+						</p>
+					</div>
+					<div class="clearfix"> </div>
+					<div class="search">
+						<p>get hottest deals to your inbox</p>
+						<form>
+							<input type="text" placeholder="Email address" required="">
+							<input type="submit" value="Subscribe">
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- //container -->
+		</div>
+		<!-- //before -->
+>>>>>>> 48a377a113617f2b8be0b759e1ee25326630e59a
