@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tour extends CI_Controller {
+class Paket extends CI_Controller {
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -19,60 +20,17 @@ class Tour extends CI_Controller {
 	 */
 	public function index()
 	{
-		 $this->load->library('pagination');
-		 $this->load->model('mymodel');
-            $data['page_title'] = 'List Artikel';
-
-            $limit_per_page = 4;
-
-            $start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
-
-            $total_records = $this->mymodel->get_total();
-
-            if ($total_records > 0) {
-
-                // $data['all_categories'] = $this->mymodel->get_all_categories($limit_per_page,$start_index);
-                $data['all_indo'] = $this->mymodel->get_indo($limit_per_page,$start_index);
-                $data['all_luar'] = $this->mymodel->get_luar($limit_per_page,$start_index);
-
-                $config['base_url'] = base_url() . 'Tour/index';
-                $config['total_rows'] = $total_records;
-                $config['per_page'] = $limit_per_page;
-
-                $this->pagination->initialize($config);
-
-                $data['links'] = $this->pagination->create_links();
-                // print_r($data['all_categories']) ;
-                // echo $data['links'];
-                // echo $limit_per_page;
-                // echo $start_index;
-                // echo $total_records;
-
-                
-                $this->load->view('home',$data);
-
-
-                $this->load->view('templates/header-home', $data);
-                $this->load->view('home',$data);
-               $this->load->view('templates/footer');
-             }
-	}
-
-	public function do_preview($id=''){
 		$this->load->model('mymodel');
-		$data['isi'] = $this->mymodel->GetPreview($id);
-		$this->load->view('templates/header', $data);
-		$this->load->view('preview', $data);
-		$this->load->view('templates/footer');
+		$data['result'] = $this->mymodel->GetPaket();
+		$this->load->view('templates/header-paket', $data);
+		$this->load->view('paket',$data);
 	}
-
-	public function add_data(){
-		$this->load->view('templates/header', $data);
-		$this->load->view('add_paket');
-		$this->load->view('templates/footer');
-	}
-
-	public function do_insert(){
+	// public function do_preview($id=''){
+	// 	$this->load->model('transac_model');
+	// 	$data['isi'] = $this->transacmodel->GetPreview($id);
+	// 	$this->load->view('preview', $data);
+	// }
+		public function do_insert(){
 	    $this->form_validation->set_rules('nama', 'Nama', 'required');
 	    $this->form_validation->set_rules('tempat', 'Tempat', 'required');
 	    $this->form_validation->set_rules('hrg_dewasa', 'Harga Penumpang Dewasa', 'required');
@@ -84,7 +42,7 @@ class Tour extends CI_Controller {
 	   
 	    if ($this->form_validation->run() === FALSE)
 	    {
-	    	$this->load->view('templates/header', $data);
+	       $this->load->view('templates/header');
 	        $this->load->view('add_paket');
 	        $this->load->view('templates/footer');
 	    }
@@ -125,12 +83,7 @@ class Tour extends CI_Controller {
 								);
 			print_r($data_insert);
 			$this->load->model('mymodel');
-			// if(level==1){
-				$res = $this->mymodel->InsertData('paket', $data_insert);
-			// } else {
-				// $res = $this->mymodel->InsertData('paket2', $data_insert);
-			// }
-			
+			$res = $this->mymodel->InsertData('paket', $data_insert);
 			
 			if($res>=1){
 				$this->session->set_flashdata('pesan','Tambah Data Sukses');
@@ -140,6 +93,7 @@ class Tour extends CI_Controller {
 			}
         }
 	}
+
 	public function edit_data($id='',$gambar=''){
 		$this->load->model('mymodel');
 		$biodata = $this->mymodel->GetPreview($id);
@@ -153,9 +107,7 @@ class Tour extends CI_Controller {
 			"syarat" 		=> $biodata[0]['syarat'],
 			"gambar"		=> $biodata[0]['gambar']
 		);
-		$this->load->view('templates/header', $data);
 		$this->load->view('edit_paket',$data);
-		$this->load->view('templates/footer');
 	}
 	public function do_update(){
 		$config['upload_path']          = 'assets/images/';
@@ -191,43 +143,17 @@ class Tour extends CI_Controller {
 				);
 			$this->load->model('mymodel');
 			$where = array('id' => $id);
-			// $res = $this->mymodel->UpdateData('paket',$data_update,$where);
-			// if(level==1){
-				$res = $this->mymodel->UpdateData('paket', $data_update);
-			// } else {
-				// $res = $this->mymodel->UpdateData('paket2', $data_update);
-			// }
+			$res = $this->mymodel->UpdateData('paket',$data_update,$where);
 			if($res>=1){
 				$this->session->set_flashdata('pesan','Update Data Sukses');
 				redirect('tour');
 			}
 		}
 	}
-	public function about(){
-		$this->load->view('templates/header', $data);
-		$this->load->view('about');
-		$this->load->view('templates/footer');
-	}
-	public function booking(){
-		$this->load->view('templates/header', $data);
-		$this->load->view('booking');
-		$this->load->view('templates/footer');
-	}
-	public function news(){
-		$this->load->view('templates/header', $data);
-		$this->load->view('news');
-		$this->load->view('templates/footer');
-	}
 	public function hapus($id){
 		$this->load->model('mymodel');
 		$where = array('id' => $id);
-		// $this->mymodel->hapus_data($where,'paket');
-		// if(level==1){
-				$this->mymodel->hapus_data($where,'paket');
-			// } else {
-				/*$this->mymodel->hapus_data($where,'paket2');*/
-			// }
+		$this->mymodel->hapus_data($where,'paket');
 		redirect('tour');
 	}
-
 }
