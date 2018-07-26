@@ -49,6 +49,11 @@
 
             </table> 
 
+			<!-- datatables -->
+			<link href="<?php echo base_url('/assets/datatables/css/dataTables.bootstrap.min.css');?>" rel="stylesheet" type="text/css" media="all">
+			<link href="<?php echo base_url('./assets/datatables/css/jquery.dataTables.min.css');?>" rel="stylesheet" type="text/css" media="all">
+			<script  src="<?php echo base_url('./assets/datatables/js/dataTables.bootstrap.min.js');?>"></script>
+			<script  src="<?php echo base_url('./assets/datatables/js/jquery.dataTables.min.js');?>"></script>
 			<script type="text/javascript">
 			$(document).ready(function(){
 			$('#myTable').DataTable();
